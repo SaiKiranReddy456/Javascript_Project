@@ -407,7 +407,7 @@
       let musicEvents = [];
 
       async function musicDisplay() {
-        const res = await fetch("/events.json");
+        const res = await fetch("/event.json");
         const data = await res.json();
         console.log("Fetched data:", data);
 
