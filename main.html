@@ -897,7 +897,7 @@
       };
 
       async function musicDisplay() {
-        const res = await fetch("http://localhost:3000/events");
+        const res = await fetch("/events.json");
         const data = await res.json();
         //console.log(data)
         const filteredMusicData = data.filter(
