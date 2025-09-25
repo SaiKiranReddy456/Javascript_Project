@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Blog Cards with Swiper Slider</title>
+
+  <!-- Swiper CSS from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
+  <!-- Custom Styles -->
+  <style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .blog-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  /* Swiper Styles */
+  .swiper-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .swiper-button-next, .swiper-button-prev {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  /* Optional: Customize swiper navigation */
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  </style>
+</head>
+<body>
+
+  <!-- Blog Section with Swiper Slider -->
+  <div class="blog-section">
+    <h2>Latest Blogs</h2>
+    <div class="swiper-container" id="swiperContainer">
+      <div class="swiper-wrapper">
+        <!-- Swiper Slides (images) -->
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/600x300?text=Image+1" alt="Event Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/600x300?text=Image+2" alt="Event Image 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/600x300?text=Image+3" alt="Event Image 3">
+        </div>
+        <!-- Add more swiper slides as needed -->
+      </div>
+
+      <!-- Swiper Navigation (optional) -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS from CDN -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>// Initialize Swiper instance
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,           // Number of slides visible at once
+      spaceBetween: 10,            // Space between slides
+      loop: true,                  // Enable looping of slides
+      autoplay: {
+        delay: 3000,               // Autoplay delay in milliseconds
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',   // Next slide button
+        prevEl: '.swiper-button-prev',   // Previous slide button
+      },
+      pagination: {
+        el: '.swiper-pagination',        // Pagination controls (optional)
+        clickable: true,
+      },
+    });
+    </script>
+</body>
+</html>

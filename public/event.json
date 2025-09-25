@@ -1,0 +1,544 @@
+{
+  "events": [
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-underground-sunday-w-space-motion-0-2025-4-7-t-13-56-50.jpg",
+      "date": "2026-05-15",
+      "title": "Rock the Night Music Festival",
+      "description": "Join us for an unforgettable night of electrifying music at the Rock the Night Festival, featuring top international bands and local artists!",
+      "venue": "Gachibowli Stadium, Hyderabad",
+      "price": 2500
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-alan-walker-india-tour-hyderabad-0-2025-4-11-t-5-43-1.jpg",
+      "date": "2026-04-30",
+      "title": "Alan Walker's India Tour",
+      "description": "Join us for an unforgettable night of electrifying music at the Alan Walker's night festival, featuring top international bands and local artists!",
+      "venue": "Hitex Exhibition Center, Hyderabad",
+      "price": 3000
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-shruti-haasan-live-at-odeum-by-prism-0-2025-3-2-t-8-40-19.jpg",
+      "date": "2026-05-31",
+      "title": "Shadows and silhouettes",
+      "description": "Get ready for a night of electrifying energy as the multi-talented Shruti Hassan takes over odeum by Prism on May21!",
+      "venue": "Odeum by Prism, Hyderabad",
+      "price": 2800
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-jazbaa-ft-rekha-bharadwaj-0-2025-4-10-t-12-30-50.jpg",
+      "date": "2026-06-21",
+      "title": "Jazbaa Ft Rekha Bharadwaj",
+      "description": "Get ready for a night of calm and soothe musical event by Rekha Bharadwaj on June 21!",
+      "venue": "Shilpakala Vedika, Hyderabad",
+      "price": 2200
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-regional-nights-ft-aarohi-2025-4-3-t-9-25-6.jpg",
+      "date": "2026-01-13",
+      "title": "Electronic Dance Party",
+      "description": "Feel the beats and dance all night long with the best DJs from around the world at the Electronic Dance Party.",
+      "venue": "Hard Rock Cafe,Hitech city, Hyderabad",
+      "price": 2700
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-band-infusion-takes-over-raasta-hyderabad-0-2025-1-22-t-5-34-48.jpg",
+      "date": "2026-07-05",
+      "title": "Classical Symphony Night",
+      "description": "Enjoy an evening of stunning orchestral music performed by a world-class symphony orchestra under the stars.",
+      "venue": "Ravindra Bharathi Auditorium, Hyderabad",
+      "price": 2000
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-initiation-day-by-revanth-0-2025-4-16-t-11-23-51.jpg",
+      "date": "2026-08-20",
+      "title": "Indie Music Showcase",
+      "description": "Discover new talent and immerse yourself in a diverse mix of indie artists in this unique music showcase.",
+      "venue": "Heart Cup Coffee, Kondapur",
+      "price": 1500
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-tribute-to-divas-of-pop-night-ft-dj-vyas-0-2025-4-3-t-10-38-49.jpg",
+      "date": "2026-08-03",
+      "title": "Pop Music Fiesta",
+      "description": "Get ready for a night of chart-topping hits and unforgettable performances from pop music's brightest stars.",
+      "venue": "Hard Rock Cafe,Hitech city, Hyderabad",
+      "price": 2600
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lokovoko-chinmayi-rahul-sipligunj-dj-olly-esse-0-2025-4-8-t-11-39-50.jpg",
+      "date": "2026-10-25",
+      "title": "Jazz Under the Moonlight",
+      "description": "Relax and unwind with a night of smooth jazz music at the beautiful outdoor venue, under the moonlit sky.",
+      "venue": "Botanical Gardens Amphitheatre, Hyderabad",
+      "price": 1800
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-soul-sunday-ft-shiv-menon-live-0-2025-3-25-t-10-34-7.jpg",
+      "date": "2026-04-25",
+      "title": "Soul Sunday ft. Shiv Menon",
+      "description": "Prepare for an unforgettable Sunday night at Hard Rock Cafe, Hitech City, Hyderabad performed by versatile and powerful Shiv Menon on April 25!",
+      "venue": "Hard Rock Cafe, Hitech City",
+      "price": 2300
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-k-s-chitra-s-chithramrutam-2-o-0-2025-4-10-t-9-6-19.jpg",
+      "date": "2026-06-25",
+      "title": "Melodies of a lifetime - K.S. Chitra's Chithramrutham 2.0",
+      "description": "Prepare for an unforgettable evening at Hyderabad performed by Melody queen K.S. Chithra on June 25!",
+      "venue": "Lalitha Kala Thoranam, Hyderabad",
+      "price": 2900
+    },
+    {
+      "category": "Music Concert",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-singer-sri-krishna-live-concert-hub-arena-0-2025-4-9-t-12-51-25.jpg",
+      "date": "2026-04-19",
+      "title": "Singer Sri Krishna live concert",
+      "description": "Get ready for a night of pure musical magic as the phenomenal takes the stage for his first-ever live concert this April 19 at Hub Arena!",
+      "venue": "Hub Arena, Hyderabad",
+      "price": 2100
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-fam-jam-by-lea-yuvan-meets-harris-17th-episode-0-2025-4-15-t-13-41-44.jpg",
+      "date": "2026-04-22",
+      "title": "Tribute to modern maestros",
+      "description": "Experience the raw energy and emotion of an acoustic night for tribute to modern maestros.",
+      "venue": "Heart Cup Coffee, Jubilee Hills",
+      "price": 1500
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-bhuwin-experience-0-2025-3-17-t-10-50-55.jpg",
+      "date": "2026-05-02",
+      "title": "Bhuwin Experience",
+      "description": "Let the spiritual melodies of Bhuwin take you on a soulful journey.",
+      "venue": "Adaa Lounge, Banjara Hills",
+      "price": 1700
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-haricharan-live-in-concert-0-2025-4-8-t-10-26-10.jpg",
+      "date": "2026-05-09",
+      "title": "Blues Bash",
+      "description": "Dive into the deep sounds of blues with an evening of powerful performances where Hari Charan steals the show",
+      "venue": "Moonshine Project, Jubilee Hills",
+      "price": 1900
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-band-capricio-live-concert-urban-mayabazar-apr27-0-2025-3-28-t-11-40-37.jpg",
+      "date": "2026-05-18",
+      "title": "Classic Rock Revival",
+      "description": "Revisit the golden era of rock music with this classic rock live band night.",
+      "venue": "Tabula Rasa Cafe, Gachibowli",
+      "price": 1600
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-band-dhruva-live-music-concert-0-2025-4-20-t-16-34-52.jpg",
+      "date": "2026-05-28",
+      "title": "Band Dhruva",
+      "description": "Live band covering popular Bollywood chartbusters all night long!",
+      "venue": "10 Downing Street, Begumpet",
+      "price": 1800
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-saturday-jam-sessions-ft-band-octavez-2025-4-19-t-10-18-28.jpg",
+      "date": "2026-06-06",
+      "title": "Band Octavez",
+      "description": "Smooth jazz melodies with a modern twist performed by a band octavez.",
+      "venue": "The Hoppery, Jubilee Hills",
+      "price": 1700
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-band-jammers-live-band-mayabazar-03-may-0-2025-4-19-t-3-46-26.jpg",
+      "date": "2026-06-14",
+      "title": "Band Jammers",
+      "description": "An electrifying fusion of Indian folk and contemporary music performed live.",
+      "venue": "Rasta Cafe, Gachibowli",
+      "price": 1600
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-soulful-sundays-at-trick-rooftop-kitchen-bar-2025-4-11-t-7-24-41.jpg",
+      "date": "2026-06-22",
+      "title": "Reggae Vibes",
+      "description": "Enjoy a relaxing evening filled with groovy reggae beats and chilled vibes.",
+      "venue": "Le Vantage Café Bar, Jubilee Hills",
+      "price": 1500
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-afterverse-a-the-weeknd-themed-fan-event-2025-4-16-t-17-33-57.jpg",
+      "date": "2026-07-01",
+      "title": "Afterverse - The weeknd Themed Fan Event",
+      "description": "Brand new weeknd-themed experience with blinding lights energy and dark pop vibes!",
+      "venue": "Taramati Baradari Cultural Complex",
+      "price": 2000
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-friday-jam-sessions-ft-the-deccan-project-2025-4-19-t-10-22-54.jpg",
+      "date": "2026-07-10",
+      "title": "The Deccan Project",
+      "description": "A live band pumping out desi remixes and foot-tapping beats.",
+      "venue": "Heart Cup Coffee, Gachibowli",
+      "price": 1600
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-unplugged-tuesday-ft-nupur-josh-mrp-night-0-2025-3-25-t-10-36-5.jpg",
+      "date": "2026-07-20",
+      "title": "Sonic Boombox",
+      "description": "Get ready to vibe with this high-energy band delivering alt-rock bangers.",
+      "venue": "Hard Rock Cafe, Hitech City",
+      "price": 1800
+    },
+    {
+      "category": "Live Band",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-george-hull-humayun-mirza-shakila-0-2025-4-11-t-10-26-29.jpg",
+      "date": "2026-07-28",
+      "title": "Retro Rewind",
+      "description": "Throwback to the '80s and '90s with your favorite retro tunes performed live!",
+      "venue": "Imli Sarai, Banjara Hills",
+      "price": 1700
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-saikiran-checks-in-0-2024-7-31-t-8-49-22.jpg",
+      "date": "2026-04-25",
+      "title": "Laugh Riot with Sai Kiran",
+      "description": "Get ready to burst into laughter with Kiran's witty take on everyday life.",
+      "venue": "Shilpakala Vedika, Hitech City",
+      "price": 1200
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-weak-independent-woman-sharon-verma-2025-4-4-t-6-55-23.jpg",
+      "date": "2026-05-05",
+      "title": "Hyderabadi Punchlines by Sharon Verma",
+      "description": "Sharon Verma bring Hyderabadi flavor to the stage in this hilarious night.",
+      "venue": "Lamakaan, Banjara Hills",
+      "price": 1100
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-clean-comedy-night-0-2025-2-22-t-7-11-18.jpg",
+      "date": "2026-05-12",
+      "title": "Telugu clean comedy night",
+      "description": "Urooj brings her sharp humor and relatable storytelling to Hyderabad!",
+      "venue": "Phoenix Arena, HITEC City",
+      "price": 1300
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-stand-up-comedy-open-mic-0-2024-11-14-t-10-21-25.jpg",
+      "date": "2026-05-20",
+      "title": "Stand-Up Open Mic Night",
+      "description": "Newbies and pros test their sets in an unpredictable night of laughs.",
+      "venue": "Hummingbird Cafe, Gachibowli",
+      "price": 1000
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-men-s-women-day-special-by-sravanthi-basa-0-2025-3-11-t-7-23-11.jpg",
+      "date": "2026-05-29",
+      "title": "Naruni Nara by Sravanthi Basa",
+      "description": "Catch funny comic Sravanthi Basa with her globally acclaimed humor.",
+      "venue": "Ravindra Bharathi Auditorium",
+      "price": 1500
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-death-by-laughter-ft-vivek-muralidharan-0-2022-5-27-t-10-18-13.jpg",
+      "date": "2026-06-03",
+      "title": "The Roast Show",
+      "description": "Watch comics take friendly jabs in this savage comedy roast battle!",
+      "venue": "The Comedy Club, Banjara Hills",
+      "price": 1400
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-not-innocent-telugu-intodu-by-sarat-uday-0-2023-11-10-t-9-21-51.jpg",
+      "date": "2026-06-10",
+      "title": "Not Innocent Telugu Intodu by by Sarat Uday",
+      "description": "Aakash is back with a hilarious new set — witty, weird, and wildly funny.",
+      "venue": "T-Hub Auditorium, Madhapur",
+      "price": 1200
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-linkedin-park-standup-comedy-by-harshit-mahawar-0-2025-3-27-t-14-25-18.jpg",
+      "date": "2026-06-18",
+      "title": "The Funny Side of IT",
+      "description": "A night for techies to laugh at their own pain – comedy with an IT twist by Harshit Mahawar",
+      "venue": "BITS Pilani Auditorium, Hyderabad Campus",
+      "price": 1100
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-gautham-govindan-live-0-2025-2-7-t-4-5-15.jpg",
+      "date": "2026-06-26",
+      "title": "Stand-Up with Gautham Govindhan",
+      "description": "The king of quirk, Gautham is here to turn your regular day hilarious.",
+      "venue": "Salar Jung Museum Amphitheatre",
+      "price": 1300
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-telugu-standup-by-silly-south-comedy-0-2025-2-8-t-4-32-43.jpg",
+      "date": "2026-07-04",
+      "title": "Friends Walk Into a Bar",
+      "description": "A surprise lineup of friends with totally different styles. Expect chaos!",
+      "venue": "Heart Cup Coffee, Begumpet",
+      "price": 1000
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-open-mic-by-kya-bolte-hyderabad-0-2025-4-7-t-7-53-22.jpg",
+      "date": "2026-07-12",
+      "title": "Whose Mic Is It Anyway?",
+      "description": "Improv comedy at its finest — audience suggestions + chaotic fun.",
+      "venue": "The Moonshine Project, Jubilee Hills",
+      "price": 1200
+    },
+    {
+      "category": "Comedy Show",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-late-night-stand-up-comedy-show-0-2024-7-12-t-3-37-53.jpg",
+      "date": "2026-07-21",
+      "title": "Comedy Shots - Rapid Fire",
+      "description": "Rapid short sets from 6 comedians — fast, furious, and funny.",
+      "venue": "The Comedy Club, Gachibowli",
+      "price": 1100
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-ananthagiri-camping-0-2024-9-28-t-10-4-26.jpg",
+      "date": "2026-04-27",
+      "title": "Hyderabad Night Trek - Ananthagiri Hills",
+      "description": "Experience the thrill of night trekking under a starlit sky.",
+      "venue": "Ananthagiri Hills Basecamp",
+      "price": 1500
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-funkayaking-sunset-kayaking-0-2022-9-8-t-9-47-47.jpg",
+      "date": "2026-05-04",
+      "title": "Kayaking on Kotepally Lake",
+      "description": "A serene kayaking experience perfect for beginners and nature lovers.",
+      "venue": "Kotepally Reservoir, Vikarabad",
+      "price": 1800
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-adventure-camping-grand-canyon-of-india-0-2024-4-2-t-11-10-58.jpg",
+      "date": "2026-05-11",
+      "title": "Rappelling Adventure",
+      "description": "Descend rocky cliffs with expert instructors and top safety gear.",
+      "venue": "Gandikota",
+      "price": 2200
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-camping-nightout-at-rocksport-0-2024-11-13-t-13-15-9.jpg",
+      "date": "2026-05-18",
+      "title": "Forest Camping Weekend",
+      "description": "Pitch your tents, light the fire, and sleep under the stars!",
+      "venue": "Srisailam Forest Campsite",
+      "price": 2000
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-flying-baba-mountain-zipline-0-2024-1-28-t-8-29-33.jpg",
+      "date": "2026-05-25",
+      "title": "Zip Lining Over the Valley",
+      "description": "Feel the wind as you glide across scenic cliffs!",
+      "venue": "Deccan Trails, Vikarabad",
+      "price": 2500
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-anthargange-sunrise-trek-with-cave-exploration-0-2025-1-22-t-7-30-33.jpg",
+      "date": "2026-06-01",
+      "title": "Cave Exploration Trek",
+      "description": "Explore ancient caves and hidden rock formations on foot.",
+      "venue": "Belum Caves, Andhra Border",
+      "price": 1700
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-atv-adventure-ride-in-goa-0-2025-4-4-t-13-15-25.jpg",
+      "date": "2026-06-08",
+      "title": "ATV Ride Challenge",
+      "description": "Take on mud, hills, and trails in an all-terrain vehicle adventure.",
+      "venue": "Xtreme Adventure Park, Gandipet",
+      "price": 2300
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-dayout-adventure-shamshabad-forest-0-2024-10-15-t-10-22-3.jpg",
+      "date": "2026-06-15",
+      "title": "Rock Climbing Bootcamp",
+      "description": "Get hands-on climbing experience with pro trainers.",
+      "venue": "Jungle camp - Shamshabad",
+      "price": 2100
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-paramotor-air-safari-0-2025-3-13-t-10-1-51.jpg",
+      "date": "2026-06-22",
+      "title": "Paramotoring Experience",
+      "description": "Soar like a bird over Hyderabad's outskirts.",
+      "venue": "Air Safari Grounds, Shamirpet",
+      "price": 3000
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-scuba-diving-in-andaman-havelock-2025-4-10-t-10-29-35.jpg",
+      "date": "2026-06-29",
+      "title": "Scuba Diving Workshop",
+      "description": "Learn basic diving skills in a simulated diving pool environment.",
+      "venue": "Aqua Dive Centre, Kompally",
+      "price": 2800
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-trail-blazers-victory-trail-marathon-2025-3-10-t-10-53-17.jpg",
+      "date": "2026-07-06",
+      "title": "Trail Running at Sunrise",
+      "description": "Beat the heat with an early morning forest trail run.",
+      "venue": "Keesaragutta Hill Trails",
+      "price": 1200
+    },
+    {
+      "category": "Adventure",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-ananthagiri-hills-camping-at-vikarabad-0-2025-1-9-t-6-39-27.jpg",
+      "date": "2026-07-13",
+      "title": "Jungle Survival Basics",
+      "description": "A hands-on crash course in surviving in the wild!",
+      "venue": "Ananthagiri Hills",
+      "price": 1900
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-miles-of-glory-2025-marathon-run-0-2025-3-13-t-11-4-18.jpg",
+      "date": "2026-04-28",
+      "title": "Hyderabad Runners 10K",
+      "description": "Join thousands of runners in this community city run.",
+      "venue": "Necklace Road, Hyderabad",
+      "price": 1000
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-international-day-of-sport-cycling-0-2025-3-19-t-10-13-21.jpg",
+      "date": "2026-05-06",
+      "title": "Cyclathon",
+      "description": "International day of sport for development and peace virtual cycling",
+      "venue": "LB Stadium, Basheerbagh",
+      "price": 1200
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lepino-pool-fiesta-0-2025-3-31-t-7-59-44.jpg",
+      "date": "2026-05-13",
+      "title": "Lepino pool fiesta",
+      "description": "Beat the heat with an exciting pool and rain dance party at Lepino pool fiesta",
+      "venue": "Lepino Resorts",
+      "price": 1500
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-global-e-cricket-premier-league-gepl-season-2-0-2025-4-12-t-10-16-41.jpg",
+      "date": "2026-05-21",
+      "title": "e-cricket ka mahayudh",
+      "description": "GEPL is the world's largest franchise-based e-cricket sports and entertainment league",
+      "venue": "LB Stadium, Basheerbagh",
+      "price": 1800
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-online-the-chess-circlechess-tournament-3-0-0-2025-4-8-t-16-13-7.jpg",
+      "date": "2026-05-30",
+      "title": "Chess Tournament: Checkmate Masters",
+      "description": "Battle of the brains in this FIDE-rated chess event.",
+      "venue": "Hyderabad International Convention Centre",
+      "price": 1100
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-push-up-challenge-2025-0-2025-4-10-t-12-32-57.jpg",
+      "date": "2026-06-06",
+      "title": "Pushup challenge 2025",
+      "description": "Celebrate your fitness journey with Idovent Pushup challenge 2025",
+      "venue": "Sanjeevaiah Tennis Courts",
+      "price": 1000
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-fit-walk-run-2025-0-2025-4-16-t-4-38-31.jpg",
+      "date": "2026-06-14",
+      "title": "Fit walk/run 2025",
+      "description": "Celebrate your fitness journey with Idovent Pushup challenge 2025",
+      "venue": "Hyderabad Public School, Begumpet",
+      "price": 1000
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-international-day-of-sport-walkathon-0-2025-3-19-t-10-25-29.jpg",
+      "date": "2026-06-21",
+      "title": "Walkathon 2025",
+      "description": "International day of sport for development and peace virtual walkathon",
+      "venue": "Gamepoint Sports Arena, Madhapur",
+      "price": 1000
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-kolkata-knight-riders-vs-gujarat-titans-0-2025-3-25-t-9-3-23.jpg",
+      "date": "2026-05-30",
+      "title": "Kolkata knight riders vs Gujarat titans",
+      "description": "Experience Kolkata knight riders and Gujarat titans live at stadium this year",
+      "venue": "Eden Gardens, Kolkata",
+      "price": 2500
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-mumbai-indians-vs-delhi-capitals-0-2025-3-6-t-12-29-1.jpg",
+      "date": "2026-05-07",
+      "title": "Mumbai Indians vs Delhi capitals",
+      "description": "Experience Mumbai indians and Delhi capitals live at stadium this year",
+      "venue": "Wankhede stadium, Mumbai",
+      "price": 2800
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-rajasthan-royals-vs-gujarat-titans-0-2025-3-29-t-14-46-25.jpg",
+      "date": "2026-05-14",
+      "title": "Rajasthan royals vs Gujarat titans",
+      "description": "Experience Rajasthan royals and Gujarat titans live at stadium this year",
+      "venue": "Sawai Mansingh stadium, Jaipur",
+      "price": 2200
+    },
+    {
+      "category": "Sports",
+      "image": "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-lucknow-super-giants-vs-delhi-capitals-0-2025-2-21-t-2-53-42.jpg",
+      "date": "2026-05-21",
+      "title": "Lucknow super giants vs Delhi capitals",
+      "description": "Experience Lucknow super giants vs Delhi capitals live at stadium this year",
+      "venue": "BRSABV Ekana cricket stadium, Lucknow",
+      "price": 2400
+    }
+  ]
+}

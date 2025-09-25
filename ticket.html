@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Ticket</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      #ticket {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #left p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
+      #right,
+      #qr {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        background-color: #ec5e71;
+        color: white;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      img {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+      }
+
+      @media (max-width: 500px) {
+        #ticket {
+          padding: 15px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Ticket</h1>
+    <div id="ticket">
+      <div id="left"></div>
+      <div id="right">
+        <button onclick="generateQRCode()">View Ticket</button>
+        <div id="qr"></div>
+      </div>
+      <div style="text-align: center">
+        <button onclick="shareTicket()">Share</button>
+        <button onclick="downloadTicket()">Download</button>
+      </div>
+    </div>
+
+    <script>
+      const bookingConfirmation = JSON.parse(
+        localStorage.getItem("bookingDetails")
+      );
+      const eventInfo = bookingConfirmation[0];
+      const userInfo = bookingConfirmation[1];
+      console.log(bookingConfirmation);
+
+      const left = document.getElementById("left");
+      left.innerHTML = `
+      <p><strong>Name:</strong> ${userInfo.name}</p>
+      <p><strong>Event:</strong> ${eventInfo.title}</p>
+      <p><strong>Date:</strong> ${eventInfo.date}</p>
+      <p><strong>Venue:</strong> ${eventInfo.venue}</p>
+    `;
+
+      function generateQRCode() {
+        const qrText = `${userInfo.name} - ${eventInfo.title}`;
+        const qrURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
+          qrText
+        )}&size=200x200`;
+        document.getElementById(
+          "qr"
+        ).innerHTML = `<img src="${qrURL}" alt="QR Code">`;
+      }
+
+      function downloadTicket() {
+        html2canvas(document.getElementById("ticket")).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = "event_ticket.png";
+          link.href = canvas.toDataURL("image/png");
+          link.click();
+        });
+      }
+
+      function shareTicket() {
+        const text = `Hey! Here's my ticket for ${eventInfo.title} at ${eventInfo.venue} on ${eventInfo.date}.`;
+        if (navigator.share) {
+          navigator
+            .share({
+              title: "My Event Ticket",
+              text: text,
+              url: window.location.href,
+            })
+            .catch(console.error);
+        } else {
+          alert("Sharing not supported on this device/browser.");
+        }
+      }
+
+      localStorage.removeItem("bookingDetails");
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
+</html>

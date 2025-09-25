@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fc;
+      }
+
+      .navbar {
+        background-color: lightgrey;
+        padding: 10px 20px;
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 11;
+      }
+
+      .navbar .title {
+        font-size: 24px;
+        color: black;
+        font-weight: 600;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 32px;
+        color: #333;
+      }
+
+      .page {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 30px 20px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+        text-align: center;
+      }
+
+      .page > p {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      input {
+        width: 90%;
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      button {
+        width: 95%;
+        padding: 14px;
+        color: white;
+        background-color: #f84464;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #575757;
+        cursor: pointer;
+      }
+
+      .page a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 15px;
+      }
+
+      .page a:hover {
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 400px) {
+        .navbar .title {
+          font-size: 20px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        .page {
+          width: 90%;
+          padding: 20px 15px;
+        }
+
+        input,
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="title">Book Your Event</div>
+    </div>
+    <h1>Book Your Event</h1>
+
+    <div class="page">
+      <p>Login to Book Your Event</p>
+      <form id="loginForm">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter Email Address"
+          id="loginEmail"
+        /><br /><br />
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Enter Password"
+          autocomplete="current-password"
+          id="loginPassword"
+        /><br /><br />
+
+        <button type="submit" id="btn2"><strong>Login</strong></button
+        ><br /><br />
+      </form>
+      <a href="signup.htm">Create a new account</a>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBJpuUuP2VRJ-Skail-4RIp5wUIzAMiD9s",
+        authDomain: "book-your-event-fc78a.firebaseapp.com",
+        projectId: "book-your-event-fc78a",
+        storageBucket: "book-your-event-fc78a.firebasestorage.app",
+        messagingSenderId: "328675671097",
+        appId: "1:328675671097:web:fe080bec65341a838461e8",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let email = document.getElementById("loginEmail").value;
+          let password = document.getElementById("loginPassword").value;
+
+          console.log("Email entered:", email);
+          console.log("Password entered:", password);
+
+          if (!email || !password) {
+            alert("Please enter both email and password.");
+            return;
+          }
+
+          signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              console.log("User logged in:", user);
+              let loggedInUser = localStorage.setItem(
+                "userlogin",
+                JSON.stringify(user)
+              );
+              console.log(loggedInUser);
+              alert("Login successful!");
+              location.href = "main.html";
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.error("Login error", errorCode, errorMessage);
+              alert(`Login failed: ${errorMessage}`);
+            });
+        });
+    </script>
+  </body>
+</html>

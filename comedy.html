@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comedy Display</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .option {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .option > button {
+        border-radius: 20px;
+        padding: 10px 10px;
+        border-color: lightgrey;
+        border-style: solid;
+        background-color: white;
+        color: #df1827;
+      }
+      .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      /* Apply smooth hover effect to cards */
+      .hover-card {
+        transition: all 0.3s ease;
+      }
+
+      .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      #music {
+        margin: 0% 4%;
+      }
+      /* Banner container spacing */
+      .banner {
+        margin-bottom: 30px;
+      }
+
+      /* Carousel image container */
+      .carousel-inner {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Carousel image styling */
+      .carousel-img {
+        width: 100%;
+        height: 75vh;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      /* Optional: zoom effect on slide change */
+      .carousel-item.active .carousel-img {
+        transform: scale(1.02);
+      }
+
+      /* Responsive handling */
+      @media (max-width: 992px) {
+        .carousel-img {
+          height: 50vh;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-img {
+          height: 35vh;
+        }
+      }
+
+      /* Navbar container */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background-color: #f5eaea;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      /* Inner container */
+      .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      /* Branding */
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #212529;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      /* Search Section */
+      #searchInput {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        width: 280px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      #searchInput:focus {
+        border-color: #495057;
+        outline: none;
+        width: 320px;
+      }
+
+      /* Logout Icon */
+      .fa-right-from-bracket {
+        font-size: 1.3rem;
+        color: #6c757d;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      .fa-right-from-bracket:hover {
+        color: #212529;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .container-fluid {
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        #searchInput {
+          flex: 1;
+          width: 100%;
+        }
+
+        .fa-right-from-bracket {
+          margin-left: auto;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .navbar {
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+      }
+
+      footer {
+        background: #1a1a1a;
+        color: #ccc;
+        padding: 40px 20px;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .footer-top div {
+        margin: 10px;
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-top h4 {
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .footer-links h3 {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 6px 0;
+        cursor: pointer;
+      }
+
+      .footer-links li:hover {
+        color: #ff4d4d;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        border-top: 1px solid #333;
+        padding-top: 15px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary" class="d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand">Book Your Event</a>
+        <form class="d-flex" role="search">
+          <i class="fa-solid fa-right-from-bracket ms-3" id="logout"></i>
+        </form>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="eventModal"
+      tabindex="-1"
+      aria-labelledby="eventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImage" class="img-fluid mb-3" />
+            <img src="" alt="" id="img1" />
+            <h5 id="modalTitle"></h5>
+            <img src="" alt="" id="img2" />
+            <p id="modalDate" class="text-muted"></p>
+            <img src="" alt="" id="img3" />
+            <p id="modalCountdown" class="text-danger fw-semibold"></p>
+            <img src="" alt="" id="img4" />
+            <p id="modalVenue" class="text-muted"></p>
+            <p id="modalDescription"></p>
+            <p id="modalBuyTickets" class="text-muted"></p>
+            <button id="modalBuyTicketsButton"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="banner" style="margin: 2%">
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-weak-independent-woman-sharon-verma-2025-4-4-t-6-55-23.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Alan Walker"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-late-night-stand-up-comedy-show-0-2024-7-12-t-3-37-53.jpg"
+              class="d-block w-100 carousel-img"
+              alt="KS Chitra"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-men-s-women-day-special-by-sravanthi-basa-0-2025-3-11-t-7-23-11.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Lokovoko Event"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <section class="container my-3">
+      <h4 style="text-align: center; font-weight: 600">
+        What are you waiting for? Grab your favorite event tickets which are
+        live now!
+      </h4>
+      <br />
+
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Search Adventure events..."
+        aria-label="Search comedy events"
+      />
+    </section>
+    <br />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div id="music"></div>
+    <div>
+      <img src="" alt="" id="img1" />
+      <img src="" alt="" id="img2" />
+      <img src="" alt="" id="img3" />
+      <img src="" alt="" id="img4" />
+    </div>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h4><i class="fa-solid fa-ticket"></i> List Your Show</h4>
+          <p>Got a show or event? Get it listed with us.</p>
+        </div>
+        <div>
+          <h4><i class="fa-solid fa-phone"></i> 24/7 Customer Care</h4>
+          <p>We’re always here to help you.</p>
+        </div>
+        <div>
+          <h4><i class="fa-solid fa-envelope"></i> Newsletter</h4>
+          <p>Subscribe for updates and offers.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Events in Hyderabad</h3>
+          <ul>
+            <li>Music Concerts</li>
+            <li>Comedy Shows</li>
+            <li>Sports Events</li>
+            <li>Adventure Activities</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Events by Genre</h3>
+          <ul>
+            <li>Live Bands</li>
+            <li>Plays & Theatre</li>
+            <li>Workshops</li>
+            <li>Festivals</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Events by City</h3>
+          <ul>
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Bangalore</li>
+            <li>Hyderabad</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <h2>Book Your Event</h2>
+        © 2025 Book Your Event. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      debugger;
+      let musicEvents = [];
+
+      async function musicDisplay() {
+        const res = await fetch("http://localhost:3000/events");
+        const data = await res.json();
+        console.log("Fetched data:", data);
+
+        musicEvents = data.filter((event) => event.category === "Comedy Show");
+        renderMusicEvents(musicEvents);
+      }
+
+      function renderMusicEvents(events) {
+        let musicDiv = document.getElementById("music");
+        musicDiv.innerHTML = "";
+
+        let row = document.createElement("div");
+        row.classList.add("row", "g-4");
+
+        events.forEach((val) => {
+          let col = document.createElement("div");
+          col.classList.add("col-12", "col-md-4");
+
+          let card = document.createElement("div");
+          card.classList.add(
+            "card",
+            "h-100",
+            "shadow-lg",
+            "rounded-3",
+            "transition",
+            "hover-card"
+          );
+
+          let img = document.createElement("img");
+          img.src = val.image;
+          img.alt = val.category;
+          img.classList.add("card-img-top", "img-fluid", "rounded-top");
+
+          let cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
+
+          let title = document.createElement("h5");
+          title.classList.add("card-title", "text-center", "fw-bold");
+          title.innerText = val.title;
+
+          let date = document.createElement("p");
+          date.classList.add("card-text", "text-muted", "text-center");
+          date.innerText = `Date: ${val.date}`;
+
+          let venue = document.createElement("p");
+          venue.classList.add("card-text", "text-muted", "text-center");
+          venue.innerText = `Venue: ${val.venue}`;
+
+          let buyTicketsButton = document.createElement("button");
+          buyTicketsButton.style.backgroundColor = "#EB4E62";
+          buyTicketsButton.style.color = "white";
+          buyTicketsButton.style.borderStyle = "none";
+          buyTicketsButton.style.padding = "2% 2%";
+          buyTicketsButton.style.borderRadius = "10px";
+          buyTicketsButton.innerText = "Buy Tickets";
+          buyTicketsButton.setAttribute("data-bs-toggle", "modal");
+          buyTicketsButton.setAttribute("data-bs-target", "#eventModal");
+
+          buyTicketsButton.addEventListener("click", () => {
+            document.getElementById("modalImage").src = val.image;
+            const icon = document.getElementById("img1");
+            icon.src = "https://assets-in.bmscdn.com/nmcms/synopsis/genre.png";
+            icon.style.width = "30px";
+            document.getElementById("modalTitle").innerText = val.title;
+            const icon1 = document.getElementById("img2");
+            icon1.src =
+              "https://assets-in.bmscdn.com/nmcms/synopsis/calendar.png";
+            icon1.style.width = "30px";
+            document.getElementById(
+              "modalDate"
+            ).innerText = `Date: ${val.date}`;
+            const icon2 = document.getElementById("img3");
+            icon2.src =
+              "https://assets-in.bmscdn.com/nmcms/synopsis/duration.png";
+            icon2.style.width = "30px";
+            document
+              .getElementById("modalCountdown")
+              .setAttribute("data-event-date", val.date);
+            const icon3 = document.getElementById("img4");
+            icon3.src =
+              "https://assets-in.bmscdn.com/nmcms/synopsis/location.png";
+            icon3.style.width = "30px";
+            document.getElementById(
+              "modalVenue"
+            ).innerText = `Venue: ${val.venue}`;
+            document.getElementById("modalDescription").innerText =
+              val.description || "No description available.";
+            const modalBtn = document.getElementById("modalBuyTicketsButton");
+            modalBtn.innerText = "Book Now";
+            modalBtn.style.backgroundColor = "#EB4E62";
+            modalBtn.style.color = "white";
+            modalBtn.style.borderStyle = "none";
+            modalBtn.style.padding = "2% 2%";
+            modalBtn.style.borderRadius = "10px";
+            modalBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              let bookingDetails =
+                JSON.parse(localStorage.getItem("bookingDetails")) || [];
+              const newBooking = {
+                title: val.title,
+                date: val.date,
+                venue: val.venue,
+                price: val.price,
+              };
+
+              bookingDetails.push(newBooking);
+              localStorage.setItem(
+                "bookingDetails",
+                JSON.stringify(bookingDetails)
+              );
+              console.log(bookingDetails);
+              window.location.href = "booking.html";
+            });
+          });
+
+          cardBody.append(title, date, venue, buyTicketsButton);
+          card.append(img, cardBody);
+          col.appendChild(card);
+          row.appendChild(col);
+        });
+
+        musicDiv.appendChild(row);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("searchInput");
+
+        searchInput.addEventListener("input", () => {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          const filteredEvents = musicEvents.filter((event) =>
+            event.title.toLowerCase().includes(searchTerm)
+          );
+
+          renderMusicEvents(filteredEvents);
+        });
+
+        musicDisplay();
+      });
+
+      function updateModalCountdown() {
+        const el = document.getElementById("modalCountdown");
+        if (!el) return;
+
+        const eventDate = new Date(el.getAttribute("data-event-date"));
+        const now = new Date();
+        const diff = eventDate - now;
+
+        if (diff <= 0) {
+          el.innerText = "Event Started or Passed";
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        el.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s left`;
+      }
+
+      setInterval(updateModalCountdown, 1000);
+
+      let logout = document.getElementById("logout");
+      logout.onclick = () => {
+        let loggedInUser = JSON.parse(localStorage.getItem("userlogin"));
+        localStorage.removeItem("userlogin");
+        Toastify({
+          text: "Logout Successful",
+          duration: 3000,
+        }).showToast();
+        location.href = "login.htm";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      #formstyling {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 90%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #formstyling h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #333;
+      }
+
+      #formstyling label {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #555;
+      }
+
+      #formstyling input {
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #formstyling input:disabled {
+        background-color: #f0f0f0;
+        color: #666;
+      }
+
+      #formstyling button {
+        padding: 0.75rem;
+        background-color: #ec5e71;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #formstyling button:hover {
+        background-color: #45a049;
+      }
+
+      @media (max-width: 480px) {
+        #formstyling {
+          padding: 1.5rem;
+          gap: 0.75rem;
+        }
+
+        #formstyling h1 {
+          font-size: 1.3rem;
+        }
+
+        #formstyling input {
+          font-size: 0.95rem;
+        }
+
+        #formstyling button {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="formstyling">
+      <h1>Booking Confirmation</h1>
+      <label for="item1">Name:</label><input type="text" id="item1" />
+      <label for="item2">Event:</label
+      ><input type="text" id="item2" disabled /> <label for="item3">Date:</label
+      ><input type="text" id="item3" disabled />
+      <label for="item4">Venue:</label
+      ><input type="text" id="item4" disabled />
+      <label for="item5">Price:</label
+      ><input type="text" id="item5" disabled />
+      <label for="item6">Quantity:</label><input type="number" id="item6" />
+      <label for="item7">Total:</label><input type="number" id="item7" />
+
+      <button type="submit" id="btn">Pay Now</button>
+    </form>
+  </body>
+  <script>
+    let confirmBooking = JSON.parse(localStorage.getItem("bookingDetails"));
+    console.log(confirmBooking);
+
+    confirmBooking.map((d) => {
+      let inp1 = document.getElementById("item1");
+      let inp2 = document.getElementById("item2");
+      let inp3 = document.getElementById("item3");
+      let inp4 = document.getElementById("item4");
+      let inp5 = document.getElementById("item5");
+      let inp7 = document.getElementById("item7");
+      let inp6 = document.getElementById("item6");
+
+      inp2.value = d.title || "";
+      inp3.value = d.date || "";
+      inp4.value = d.venue || "";
+      inp5.value = d.price || "";
+      inp6.addEventListener("input", () => {
+        const quantity = parseInt(inp6.value) || 0;
+        const price = parseFloat(d.price) || 0;
+        inp7.value = quantity * price;
+      });
+    });
+    let btn1 = document.getElementById("btn");
+    btn1.onclick = (e) => {
+      e.preventDefault();
+      let inp1 = document.getElementById("item1");
+      let inp7 = document.getElementById("item7");
+      let bookingConfirmation = JSON.parse(
+        localStorage.getItem("bookingDetails")
+      );
+      bookingConfirmation.push({
+        name: inp1.value,
+        total: inp7.value,
+      });
+      localStorage.setItem(
+        "bookingDetails",
+        JSON.stringify(bookingConfirmation)
+      );
+      console.log(bookingConfirmation);
+      location.href = "payment.html";
+    };
+  </script>
+</html>

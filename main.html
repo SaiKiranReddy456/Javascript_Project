@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Event</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 2rem;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background-color: #f5eaea;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #212529;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      #searchInput {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        width: 280px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      #searchInput:focus {
+        border-color: #495057;
+        outline: none;
+        width: 320px;
+      }
+
+      .fa-right-from-bracket {
+        font-size: 1.3rem;
+        color: #6c757d;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      .fa-right-from-bracket:hover {
+        color: #212529;
+      }
+
+      @media (max-width: 992px) {
+        .container-fluid {
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        #searchInput {
+          flex: 1;
+          width: 100%;
+        }
+
+        .fa-right-from-bracket {
+          margin-left: auto;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .navbar {
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+      }
+
+      .mini {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+        margin: 2rem;
+      }
+
+      .mini > div {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 10px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .mini > div:hover {
+        transform: translateY(-5px);
+      }
+
+      .mini img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .carousel {
+        margin: 3rem auto;
+        max-width: 800px;
+      }
+
+      .carousel .card {
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel .card-img-top {
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 1rem 1.25rem;
+      }
+
+      .modal-content {
+        border-radius: 12px;
+      }
+
+      .modal-header,
+      .modal-footer {
+        border: none;
+      }
+
+      h3,
+      .card-title {
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 1rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.5rem;
+        }
+
+        .form-control {
+          width: 150px;
+        }
+
+        .mini img {
+          height: 140px;
+        }
+
+        .carousel .card-img-top {
+          height: 200px;
+        }
+
+        .card-title {
+          font-size: 1rem;
+        }
+
+        .card-text {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .mini {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+
+        .card-body {
+          padding: 0.75rem 1rem;
+        }
+
+        .carousel {
+          margin: 2rem auto;
+        }
+      }
+
+      footer {
+        background: #1a1a1a;
+        color: #ccc;
+        padding: 40px 20px;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .footer-top div {
+        margin: 10px;
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-top h4 {
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .footer-links h3 {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 6px 0;
+        cursor: pointer;
+      }
+
+      .footer-links li:hover {
+        color: #ff4d4d;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        border-top: 1px solid #333;
+        padding-top: 15px;
+      }
+
+      #comedy {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-evenly;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      @media (max-width: 992px) {
+        #comedy {
+          grid-template-columns: repeat(3, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #comedy {
+          grid-template-columns: repeat(2, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #comedy {
+          grid-template-columns: repeat(1, auto);
+          gap: 10px;
+        }
+      }
+
+      #adv {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-evenly;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      @media (max-width: 992px) {
+        #adv {
+          grid-template-columns: repeat(3, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #adv {
+          grid-template-columns: repeat(2, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #adv {
+          grid-template-columns: repeat(1, auto);
+          gap: 10px;
+        }
+      }
+
+      #musicstudio {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-evenly;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      @media (max-width: 992px) {
+        #musicstudio {
+          grid-template-columns: repeat(3, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #musicstudio {
+          grid-template-columns: repeat(2, auto);
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #musicstudio {
+          grid-template-columns: repeat(1, auto);
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary" class="d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand">Book Your Event</a>
+        <form class="d-flex" role="search">
+          <i class="fa-solid fa-right-from-bracket ms-3" id="logout"></i>
+        </form>
+      </div>
+    </nav>
+    <div class="mini">
+      <div class="mini1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-LJowZ76iaayImh1htMvrdfuQwkvUd0715w&s"
+        /><br />
+        <h3 style="text-align: center">Offers</h3>
+      </div>
+      <div class="mini2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdQJYveRu-ld2leaKS4T2bMrt9NSN6K2RDw&s"
+        />
+        <h3 style="text-align: center">Music Concerts</h3>
+      </div>
+      <div class="mini3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGNHgYMPlRTp0w4m3ptPreU9i_tpAGkVPyCw&s"
+        />
+        <h3 style="text-align: center">Live Band</h3>
+      </div>
+      <div class="mini4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUUFga75N6bMAz6ylCgPJP2vn2HM1ruW3GOA&s"
+        />
+        <h3 style="text-align: center">Comedy</h3>
+      </div>
+      <div class="mini5">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlSFs3jM7TOazSDqBASF65RcenRaCBap3uFA&s"
+        />
+        <h3 style="text-align: center">Adventure</h3>
+      </div>
+      <div class="mini6">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCq3VMxCZYOTlavwFWYxuiodxP9hyZ5gQfw&s"
+        />
+        <h3 style="text-align: center">Sports</h3>
+      </div>
+    </div>
+
+    <div id="musicCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/desktop/media-desktop-weak-independent-woman-sharon-verma-2025-4-4-t-6-55-23.jpg"
+              class="card-img-top"
+              alt="Jazz Night"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hyderabadi Punchlines by Sharon Verma</h5>
+              <p class="card-text">
+                Sharon Verma bring Hyderabadi flavor to the stage in this
+                hilarious night.
+              </p>
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#eventModal"
+                data-title="Hyderabadi Punchlines by Sharon Verma"
+                data-date="2025-05-05"
+                data-venue="Lamakaan, Banjara Hills"
+                data-description="Sharon Verma bring Hyderabadi flavor to the stage in this hilarious night."
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-funkayaking-sunset-kayaking-0-2022-9-8-t-9-47-47.jpg"
+              class="card-img-top"
+              alt="Sunset Kayaking"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sunset Kayaking</h5>
+              <p class="card-text">Adventure meets tranquility on the water.</p>
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#eventModal"
+                data-title="Sunset Kayaking"
+                data-date="June 12, 2025"
+                data-venue="Secret Lake, Hyderabad"
+                data-description="Join us for an unforgettable kayaking experience during sunset."
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card">
+            <img
+              src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-band-dhruva-live-music-concert-0-2025-4-20-t-16-34-52.jpg"
+              class="card-img-top"
+              alt="Band Dhruva"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Band Dhruva Live</h5>
+              <p class="card-text">
+                Enjoy a high-energy live performance by Band Dhruva.
+              </p>
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#eventModal"
+                data-title="Band Dhruva Live"
+                data-date="June 15, 2025"
+                data-venue="Gachibowli Indoor Stadium"
+                data-description="Rock the night away with Band Dhruva's electrifying set."
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#musicCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#musicCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div
+      class="modal fade"
+      id="eventModal"
+      tabindex="-1"
+      aria-labelledby="eventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Event Title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Date:</strong> <span id="eventDate"></span></p>
+            <p><strong>Venue:</strong> <span id="eventVenue"></span></p>
+            <p>
+              <strong>Description:</strong> <span id="eventDescription"></span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">Book Now</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="text-align: center">Things To Do In Your City</h2>
+      <h3 style="text-align: center">Here's what everyone is booking</h3>
+      <div>
+        <div id="left">
+          <img src="" alt="" id="pic" style="width: 50%; margin: 1% 25%" />
+        </div>
+        <div id="right">
+          <p id="title"></p>
+          <p id="desc"></p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div id="musicmain">
+      <h2 style="margin: 2% 5%; color: white">Your Music Studio</h2>
+      <div id="musicstudio">
+        <div class="card" style="width: 18rem">
+          <img src="" class="musicimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title musictitle"></h5>
+            <p class="card-text musicdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="musicimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title musictitle"></h5>
+            <p class="card-text musicdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="musicimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title musictitle"></h5>
+            <p class="card-text musicdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="musicimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title musictitle"></h5>
+            <p class="card-text musicdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="adventuremain">
+      <h2 style="margin: 2% 5%; color: black">Adventures</h2>
+      <div id="adv">
+        <div class="card" style="width: 18rem">
+          <img src="" class="advimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title advtitle"></h5>
+            <p class="card-text advdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleAdvButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="advimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title advtitle"></h5>
+            <p class="card-text advdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleAdvButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="advimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title advtitle"></h5>
+            <p class="card-text advdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleAdvButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="advimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title advtitle"></h5>
+            <p class="card-text advdesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleAdvButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="comedymain">
+      <h2 style="margin: 2% 5%; color: black">Laughter</h2>
+      <div id="comedy">
+        <div class="card" style="width: 18rem">
+          <img src="" class="comedyimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title comedytitle"></h5>
+            <p class="card-text comedydesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleComedyButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="comedyimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title comedytitle"></h5>
+            <p class="card-text comedydesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleComedyButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="comedyimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title comedytitle"></h5>
+            <p class="card-text comedydesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleComedyButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem">
+          <img src="" class="comedyimg card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title comedytitle"></h5>
+            <p class="card-text comedydesc"></p>
+            <a
+              href="#"
+              class="btn btn-primary"
+              id="handlebutton"
+              onclick="handleComedyButton()"
+              >Book Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h4><i class="fa-solid fa-ticket"></i> List Your Show</h4>
+          <p>Got a show or event? Get it listed with us.</p>
+        </div>
+        <div>
+          <h4><i class="fa-solid fa-phone"></i> 24/7 Customer Care</h4>
+          <p>We’re always here to help you.</p>
+        </div>
+        <div>
+          <h4><i class="fa-solid fa-envelope"></i> Newsletter</h4>
+          <p>Subscribe for updates and offers.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Events in Hyderabad</h3>
+          <ul>
+            <li>Music Concerts</li>
+            <li>Comedy Shows</li>
+            <li>Sports Events</li>
+            <li>Adventure Activities</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Events by Genre</h3>
+          <ul>
+            <li>Live Bands</li>
+            <li>Plays & Theatre</li>
+            <li>Workshops</li>
+            <li>Festivals</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Events by City</h3>
+          <ul>
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Bangalore</li>
+            <li>Hyderabad</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <h2>Book Your Event</h2>
+        © 2025 Book Your Event. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      const modal = document.getElementById("eventModal");
+      modal.addEventListener("show.bs.modal", function (event) {
+        const button = event.relatedTarget;
+        document.getElementById("eventModalLabel").textContent =
+          button.getAttribute("data-title");
+        document.getElementById("eventDate").textContent =
+          button.getAttribute("data-date");
+        document.getElementById("eventVenue").textContent =
+          button.getAttribute("data-venue");
+        document.getElementById("eventDescription").textContent =
+          button.getAttribute("data-description");
+      });
+
+      let item1 = document.getElementsByClassName("mini1")[0];
+      item1.addEventListener("click", function () {
+        window.location.href = "offer.html";
+      });
+
+      let item2 = document.getElementsByClassName("mini2")[0];
+      item2.addEventListener("click", function () {
+        window.location.href = "music.html";
+      });
+
+      let item3 = document.getElementsByClassName("mini3")[0];
+      item3.addEventListener("click", function () {
+        window.location.href = "band.html";
+      });
+
+      let item4 = document.getElementsByClassName("mini4")[0];
+      item4.addEventListener("click", function () {
+        window.location.href = "comedy.html";
+      });
+
+      let item5 = document.getElementsByClassName("mini5")[0];
+      item5.addEventListener("click", function () {
+        window.location.href = "adventure.html";
+      });
+
+      let item6 = document.getElementsByClassName("mini6")[0];
+      item6.addEventListener("click", function () {
+        window.location.href = "sports.html";
+      });
+
+      let logout = document.getElementById("logout");
+      logout.onclick = () => {
+        let loggedInUser = JSON.parse(localStorage.getItem("userlogin"));
+        localStorage.removeItem("userlogin");
+        Toastify({
+          text: "Logout Successful",
+
+          duration: 3000,
+        }).showToast();
+        location.href = "login.htm";
+      };
+
+      const handleButton = () => {
+        window.location.href = "music.html";
+      };
+
+      const handleAdvButton = () => {
+        window.location.href = "adventure.html";
+      };
+
+      const handleComedyButton = () => {
+        window.location.href = "comedy.html";
+      };
+
+      async function musicDisplay() {
+        const res = await fetch("http://localhost:3000/events");
+        const data = await res.json();
+        //console.log(data)
+        const filteredMusicData = data.filter(
+          (x) => x.category === "Music Concert"
+        );
+
+        const filteredAdvData = data.filter((x) => x.category === "Adventure");
+        //console.log(filteredAdvData)
+
+        const filteredComedyData = data.filter(
+          (x) => x.category === "Comedy Show"
+        );
+
+        data.map((x) => {
+          let leftPic = document.getElementById("pic");
+          leftPic.src = x.image;
+          leftPic.style.borderRadius = "10px";
+          leftPic.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
+          leftPic.style.cursor = "pointer";
+
+          let rightTitle = document.getElementById("title");
+          rightTitle.innerText = x.title;
+          rightTitle.style.fontSize = "larger";
+          rightTitle.style.fontWeight = "700";
+          rightTitle.style.textAlign = "center";
+
+          let rightDesc = document.getElementById("desc");
+          rightDesc.innerText = x.description;
+          rightDesc.style.fontSize = "larger";
+          rightDesc.style.fontWeight = "700";
+          rightDesc.style.textAlign = "center";
+        });
+
+        filteredMusicData.map((x) => {
+          let musicImgs = document.getElementsByClassName("musicimg");
+
+          let musicTitles = document.getElementsByClassName("musictitle");
+
+          let musicDescs = document.getElementsByClassName("musicdesc");
+
+          filteredMusicData.forEach((x, i) => {
+            if (musicImgs[i]) musicImgs[i].src = x.image;
+            if (musicTitles[i]) musicTitles[i].innerText = x.title;
+            if (musicDescs[i]) musicDescs[i].innerText = x.description;
+          });
+
+          let musicStudio = document.getElementById("musicstudio");
+          musicStudio.addEventListener("mouseenter", () => {
+            musicStudio.style.transform = "scale(1.01) translateY(10px)";
+          });
+          musicStudio.addEventListener("mouseleave", () => {
+            musicStudio.style.transform = "scale(1.0) translateY(0px)";
+          });
+
+          let musicMain = document.getElementById("musicmain");
+          musicMain.style.backgroundColor = "#2B3149";
+          musicMain.style.padding = "2% 0%";
+        });
+
+        filteredAdvData.map((x) => {
+          let advImgs = document.getElementsByClassName("advimg");
+
+          let advTitles = document.getElementsByClassName("advtitle");
+
+          let advDescs = document.getElementsByClassName("advdesc");
+
+          filteredAdvData.forEach((x, i) => {
+            if (advImgs[i]) advImgs[i].src = x.image;
+            if (advTitles[i]) advTitles[i].innerText = x.title;
+            if (advDescs[i]) advDescs[i].innerText = x.description;
+          });
+
+          let adventure = document.getElementById("adv");
+          adventure.addEventListener("mouseenter", () => {
+            adventure.style.transform = "scale(1.01) translateY(10px)";
+          });
+          adventure.addEventListener("mouseleave", () => {
+            adventure.style.transform = "scale(1.0) translateY(0px)";
+          });
+
+          let adventureMain = document.getElementById("adventuremain");
+          adventureMain.style.backgroundColor = "#F2F5F9";
+          adventureMain.style.padding = "2% 0%";
+          adventureMain.style.margin = "5% 0%";
+        });
+
+        filteredComedyData.map((x) => {
+          let comedyImgs = document.getElementsByClassName("comedyimg");
+
+          let comedyTitles = document.getElementsByClassName("comedytitle");
+
+          let comedyDescs = document.getElementsByClassName("comedydesc");
+
+          filteredComedyData.forEach((x, i) => {
+            if (comedyImgs[i]) comedyImgs[i].src = x.image;
+            if (comedyTitles[i]) comedyTitles[i].innerText = x.title;
+            if (comedyDescs[i]) comedyDescs[i].innerText = x.description;
+          });
+
+          let comedy = document.getElementById("comedy");
+          comedy.addEventListener("mouseenter", () => {
+            comedy.style.transform = "scale(1.01) translateY(10px)";
+          });
+          comedy.addEventListener("mouseleave", () => {
+            comedy.style.transform = "scale(1.0) translateY(0px)";
+          });
+
+          let comedyMain = document.getElementById("comedymain");
+          comedyMain.style.padding = "2% 0%";
+          comedyMain.style.margin = "5% 0%";
+        });
+      }
+
+      musicDisplay();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
