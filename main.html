@@ -897,21 +897,21 @@
       };
 
       async function musicDisplay() {
-        const res = await fetch("/event.json");
+        const res = await fetch("./data/event.json");
         const data = await res.json();
         //console.log(data)
-        const filteredMusicData = data.filter(
+        const filteredMusicData = data.events.filter(
           (x) => x.category === "Music Concert"
         );
 
-        const filteredAdvData = data.filter((x) => x.category === "Adventure");
+        const filteredAdvData = data.events.filter((x) => x.category === "Adventure");
         //console.log(filteredAdvData)
 
-        const filteredComedyData = data.filter(
+        const filteredComedyData = data.events.filter(
           (x) => x.category === "Comedy Show"
         );
 
-        data.map((x) => {
+        data.events.map((x) => {
           let leftPic = document.getElementById("pic");
           leftPic.src = x.image;
           leftPic.style.borderRadius = "10px";

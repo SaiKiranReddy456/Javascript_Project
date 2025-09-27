@@ -407,11 +407,11 @@
       let musicEvents = [];
 
       async function musicDisplay() {
-        const res = await fetch("http://localhost:3000/events");
+        const res = await fetch("./data/event.json");
         const data = await res.json();
         console.log("Fetched data:", data);
 
-        musicEvents = data.filter((event) => event.category === "Adventure");
+        musicEvents = data.events.filter((event) => event.category === "Adventure");
         renderMusicEvents(musicEvents);
       }
 

@@ -405,11 +405,11 @@
       let musicEvents = [];
 
       async function musicDisplay() {
-        const res = await fetch("/event.json");
+        const res = await fetch("./data/event.json");
         const data = await res.json();
         console.log("Fetched data:", data);
 
-        musicEvents = data.filter((event) => event.category === "Sports");
+        musicEvents = data.events.filter((event) => event.category === "Sports");
         renderMusicEvents(musicEvents);
       }
 
